@@ -1,0 +1,105 @@
+:root {
+    --brixo-primary: #0d6efd;
+    --brixo-primary-light: #e7f1ff;
+    --brixo-dark: #1f2933;
+    --brixo-muted: #6c757d;
+    --brixo-radius-lg: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--brixo-dark);
+}
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.py-6 {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+}
+
+@media (min-width: 992px) {
+    .py-lg-6 {
+        padding-top: 6rem !important;
+        padding-bottom: 6rem !important;
+    }
+}
+
+.hero-illustration-card {
+    border-radius: var(--brixo-radius-lg);
+    background: #fff;
+}
+
+.icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: var(--brixo-radius-lg);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 1.25rem 2.5rem -1.5rem rgba(13, 110, 253, 0.6);
+}
+
+.step-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--brixo-primary);
+    color: #fff;
+    font-weight: 600;
+}
+
+.professional-card,
+.testimonial-card {
+    border-radius: var(--brixo-radius-lg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.professional-card:hover,
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 1rem 2rem -1.5rem rgba(31, 41, 51, 0.25);
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer ul li:last-child {
+    margin-bottom: 0;
+}
+
+.bg-white-75 {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.hero-section .badge {
+    font-size: 0.85rem;
+    border-radius: 999px;
+    padding: 0.4rem 0.9rem;
+}
+
+@media (max-width: 767.98px) {
+    .navbar .btn {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+}
