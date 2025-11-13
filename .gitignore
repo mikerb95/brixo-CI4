@@ -1,0 +1,35 @@
+# Composer dependencies
+/vendor/
+/composer.lock
+
+# Environment files
+.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Writable directories
+/writable/cache/*
+!/writable/cache/index.html
+/writable/logs/*
+!/writable/logs/index.html
+/writable/session/*
+!/writable/session/index.html
+/writable/uploads/*
+!/writable/uploads/index.html
+
+# PHPUnit
+/phpunit*.xml
+/.phpunit.cache
+/build/
+
+# Node modules (if using npm)
+/node_modules/
