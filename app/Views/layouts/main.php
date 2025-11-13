@@ -28,6 +28,7 @@ $title = $this->renderSection('title') ?: 'Brixo | Servicios Profesionales en Co
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" href="<?= esc(route_to('home')) ?>">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= esc(route_to('about')) ?>">Acerca de</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= esc(route_to('hire')) ?>">Contrata</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= esc(route_to('professionals')) ?>">Profesionales</a></li>
                 <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-3" href="<?= esc(route_to('payment-demo')) ?>">Pago Demo</a></li>

@@ -71,4 +71,105 @@ class Home extends BaseController
 
         return view('pages/professionals', $data);
     }
+
+    public function about(): string
+    {
+        $data = [
+            'mainFeatures' => [
+                [
+                    'icon' => 'bi-shield-check',
+                    'title' => 'Pagos protegidos',
+                    'description' => 'Tus pagos se liberan por hitos completados. Si algo sale mal, estamos aquí para ayudarte a resolver la situación con garantías y respaldo.',
+                ],
+                [
+                    'icon' => 'bi-people-fill',
+                    'title' => 'Profesionales verificados',
+                    'description' => 'Todos nuestros profesionales pasan por verificación de identidad, antecedentes y referencias. Solo trabajas con expertos confiables.',
+                ],
+                [
+                    'icon' => 'bi-file-earmark-text',
+                    'title' => 'Contratos digitales',
+                    'description' => 'Firma acuerdos claros con alcance, cronograma y presupuesto definidos. Todo queda documentado y protegido legalmente.',
+                ],
+                [
+                    'icon' => 'bi-graph-up',
+                    'title' => 'Seguimiento en tiempo real',
+                    'description' => 'Monitorea el avance de tu proyecto, valida entregas por hito y comunícate directamente con tu equipo desde la plataforma.',
+                ],
+                [
+                    'icon' => 'bi-clock-history',
+                    'title' => 'Soporte 24/7',
+                    'description' => 'Equipo especializado en construcción disponible para emergencias, consultas técnicas y mediación en caso de conflictos.',
+                ],
+                [
+                    'icon' => 'bi-star-fill',
+                    'title' => 'Calificaciones transparentes',
+                    'description' => 'Revisa opiniones reales de clientes anteriores, portafolios de trabajos completados y certificaciones profesionales.',
+                ],
+            ],
+            'useCases' => [
+                [
+                    'title' => 'Para propietarios',
+                    'description' => 'Remodelar tu hogar, hacer reparaciones o construir desde cero con profesionales confiables, pagos seguros y seguimiento total.',
+                    'benefits' => [
+                        'Propuestas competitivas de múltiples profesionales',
+                        'Pagos liberados solo cuando apruebes el trabajo',
+                        'Garantía de satisfacción respaldada por Brixo',
+                    ],
+                ],
+                [
+                    'title' => 'Para empresas',
+                    'description' => 'Gestiona proyectos corporativos, mantenimientos de locales o construcciones comerciales con equipos especializados.',
+                    'benefits' => [
+                        'Equipos profesionales para proyectos de cualquier escala',
+                        'Facturación y documentación fiscal completa',
+                        'Coordinación y supervisión de múltiples frentes',
+                    ],
+                ],
+                [
+                    'title' => 'Para profesionales',
+                    'description' => 'Accede a clientes verificados, administra tus proyectos digitalmente y recibe pagos puntuales con respaldo legal.',
+                    'benefits' => [
+                        'Agenda optimizada con proyectos listos para ejecutar',
+                        'Pagos garantizados al completar hitos acordados',
+                        'Acceso a capacitaciones y certificaciones',
+                    ],
+                ],
+            ],
+            'howItWorks' => [
+                [
+                    'step' => '1',
+                    'title' => 'Publica tu necesidad',
+                    'description' => 'Describe tu proyecto con detalles, presupuesto estimado, ubicación y fechas preferidas.',
+                ],
+                [
+                    'step' => '2',
+                    'title' => 'Recibe propuestas',
+                    'description' => 'Profesionales verificados envían cotizaciones personalizadas con cronogramas y garantías.',
+                ],
+                [
+                    'step' => '3',
+                    'title' => 'Elige y contrata',
+                    'description' => 'Compara perfiles, revisa calificaciones y selecciona al mejor candidato para tu proyecto.',
+                ],
+                [
+                    'step' => '4',
+                    'title' => 'Firma el contrato',
+                    'description' => 'Acuerdo digital con alcance, hitos, cronograma y forma de pago claramente definidos.',
+                ],
+                [
+                    'step' => '5',
+                    'title' => 'Ejecuta con seguimiento',
+                    'description' => 'Monitorea avances, valida entregas y comunícate con tu equipo desde la plataforma.',
+                ],
+                [
+                    'step' => '6',
+                    'title' => 'Paga por hitos',
+                    'description' => 'Los pagos se liberan automáticamente cuando apruebes cada fase completada del proyecto.',
+                ],
+            ],
+        ];
+
+        return view('pages/about', $data);
+    }
 }
