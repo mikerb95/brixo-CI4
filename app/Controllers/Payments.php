@@ -7,7 +7,7 @@ use CodeIgniter\HTTP\RedirectResponse;
 class Payments extends BaseController
 {
     /**
-     * Helpers needed for the demo checkout flow.
+     * Helpers necesarios para el flujo de pago demo.
      *
      * @var list<string>
      */

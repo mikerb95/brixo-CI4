@@ -7,7 +7,7 @@ use CodeIgniter\HTTP\RedirectResponse;
 class Auth extends BaseController
 {
     /**
-     * Helpers required for the authentication views.
+     * Helpers necesarios para las vistas de autenticacion.
      *
      * @var list<string>
      */
@@ -15,7 +15,7 @@ class Auth extends BaseController
     protected $helpers = ['url', 'form'];
 
     /**
-     * Demo user store. Replace with persistence layer + hashed passwords in production.
+     * Lista de usuarios demo. Cambiar por persistencia real y contrasenas cifradas en produccion.
      *
      * @var array<string, array<string, string>>
      */
