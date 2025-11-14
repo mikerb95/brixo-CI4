@@ -1,3 +1,4 @@
+/* Paleta y tipografia base */
 :root {
     --brixo-primary: #0d6efd;
     --brixo-primary-light: #e7f1ff;
@@ -7,16 +8,19 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Configuracion general del cuerpo */
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--brixo-dark);
 }
 
+/* Hero principal con imagen destacada */
 .hero-section {
     position: relative;
     overflow: hidden;
 }
 
+/* Utilidades de espaciado personalizadas */
 .py-6 {
     padding-top: 6rem !important;
     padding-bottom: 6rem !important;
@@ -29,11 +33,13 @@ body {
     }
 }
 
+/* Tarjeta que contiene la ilustracion del hero */
 .hero-illustration-card {
     border-radius: var(--brixo-radius-lg);
     background: #fff;
 }
 
+/* Icono redondeado para servicios */
 .icon-wrap {
     display: inline-flex;
     align-items: center;
@@ -44,17 +50,20 @@ body {
     font-size: 1.5rem;
 }
 
+/* Tarjeta de servicios con animacion */
 .service-card {
     background: #fff;
     border-radius: var(--brixo-radius-lg);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* Elevacion al pasar el cursor */
 .service-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 1.25rem 2.5rem -1.5rem rgba(13, 110, 253, 0.6);
 }
 
+/* Circulo numerado del flujo */
 .step-circle {
     display: inline-flex;
     align-items: center;
@@ -67,18 +76,21 @@ body {
     font-weight: 600;
 }
 
+/* Tarjetas de profesionales y testimonios */
 .professional-card,
 .testimonial-card {
     border-radius: var(--brixo-radius-lg);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Animacion de realce al pasar el cursor */
 .professional-card:hover,
 .testimonial-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 1rem 2rem -1.5rem rgba(31, 41, 51, 0.25);
 }
 
+/* Ajustes del pie de pagina */
 footer ul li {
     margin-bottom: 0.5rem;
 }
@@ -87,10 +99,12 @@ footer ul li:last-child {
     margin-bottom: 0;
 }
 
+/* Variacion de color blanco transparente */
 .bg-white-75 {
     color: rgba(255, 255, 255, 0.75);
 }
 
+/* Estilo especial para insignias del hero */
 .hero-section .badge {
     font-size: 0.85rem;
     border-radius: 999px;

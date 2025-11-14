@@ -7,6 +7,7 @@ use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use Config\Services;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -35,7 +36,14 @@ abstract class BaseController extends Controller
      *
      * @var list<string>
      */
+    // Cargamos helper url para disponer de funciones base_url en todas las vistas
     protected $helpers = ['url'];
+
+    /**
+     * Shared session instance for descendant controllers.
+     */
+    // Referencia unica de sesion para reutilizar en controladores hijos
+    protected $session;
 
     /**
      * Be sure to declare properties for any property fetch you initialized.
@@ -48,11 +56,10 @@ abstract class BaseController extends Controller
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
-        // Do Not Edit This Line
+        // No modificar: mantiene configuracion base de CodeIgniter
         parent::initController($request, $response, $logger);
 
-        // Preload any models, libraries, etc, here.
-
-        // E.g.: $this->session = service('session');
+        // Creamos la sesion una sola vez para compartirla en toda la aplicacion
+        $this->session = Services::session();
     }
 }

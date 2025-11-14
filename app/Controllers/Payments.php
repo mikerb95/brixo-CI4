@@ -11,10 +11,12 @@ class Payments extends BaseController
      *
      * @var list<string>
      */
+    // Helpers necesarios para renderizar formularios y generar cadenas demo
     protected $helpers = ['url', 'form', 'text'];
 
     public function demo(): string|RedirectResponse
     {
+        // Obtenemos la sesion para leer y guardar mensajes temporales
         $session = session();
         $data    = [
             'errors'        => [],
@@ -22,6 +24,7 @@ class Payments extends BaseController
         ];
 
         if ($this->request->getMethod() === 'post') {
+            // Reglas de validacion basicas para simular pasarela
             $rules = [
                 'client_name'   => 'required|min_length[3]',
                 'service_type'  => 'required',
@@ -61,6 +64,7 @@ class Payments extends BaseController
             if (! $this->validate($rules, $messages)) {
                 $data['errors'] = $this->validator->getErrors();
             } else {
+                // Generamos referencia aleatoria similar a una transaccion real
                 $reference = 'BRX-' . strtoupper(random_string('alnum', 8));
 
                 $session->setFlashdata('paymentResult', [
@@ -77,6 +81,7 @@ class Payments extends BaseController
                     ],
                 ]);
 
+                // Redirigimos para evitar reenvio de formulario y mostrar resumen
                 return redirect()->route('payment-demo')->with('payment_success', true);
             }
         }

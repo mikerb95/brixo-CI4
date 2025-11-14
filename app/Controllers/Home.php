@@ -6,6 +6,7 @@ class Home extends BaseController
 {
     public function index(): string
     {
+        // Construimos datos para la portada con contenido demo
         $data = [
             'serviceCategories' => [
                 ['title' => 'Remodelaciones', 'description' => 'Renueva apartamentos, casas y locales con expertos certificados.', 'icon' => 'bi-house-gear'],
@@ -35,6 +36,7 @@ class Home extends BaseController
 
     public function hire(): string
     {
+        // Informacion para el flujo de contratacion con beneficios y preguntas frecuentes
         $data = [
             'benefits' => [
                 'Contratos claros con respaldo digital y seguimiento en tiempo real.',
@@ -54,6 +56,7 @@ class Home extends BaseController
 
     public function professionals(): string
     {
+        // Datos que guian a los profesionales interesados en registrarse
         $data = [
             'perks' => [
                 'Recibe clientes listos para contratar y optimiza tu agenda.',

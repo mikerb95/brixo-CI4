@@ -3,6 +3,7 @@
 <?= $this->section('title') ?>Brixo | Contrata profesionales certificados<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+<!-- Introduccion para clientes que desean contratar -->
 <section class="page-header py-5 bg-light border-bottom">
     <div class="container">
         <div class="row align-items-center g-4">
@@ -19,6 +20,7 @@
                     <h5 class="fw-semibold mb-3">¿Por qué Brixo?</h5>
                     <ul class="list-unstyled mb-0 text-muted">
                         <?php foreach ($benefits as $benefit): ?>
+                            <!-- Beneficio mostrado como lista -->
                             <li class="d-flex gap-3 align-items-start mb-3">
                                 <i class="bi bi-check-circle-fill text-primary mt-1"></i>
                                 <span><?= esc($benefit) ?></span>
@@ -31,6 +33,7 @@
     </div>
 </section>
 
+<!-- Guia para publicar proyectos con checklist -->
 <section class="py-5" id="publica-proyecto">
     <div class="container">
         <div class="row g-4 align-items-start">
@@ -79,6 +82,7 @@
     </div>
 </section>
 
+<!-- Preguntas frecuentes y lista de servicios solicitados -->
 <section class="py-5 bg-light">
     <div class="container">
         <div class="row g-4">
@@ -86,6 +90,7 @@
                 <h3 class="fw-bold mb-3">Preguntas frecuentes</h3>
                 <div class="accordion" id="faqAccordion">
                     <?php foreach ($faqs as $index => $faq): ?>
+                        <!-- Acordeon dinamico por pregunta -->
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="faq-heading-<?= esc($index) ?>">
                                 <button class="accordion-button <?= $index !== 0 ? 'collapsed' : '' ?>" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse-<?= esc($index) ?>" aria-expanded="<?= $index === 0 ? 'true' : 'false' ?>" aria-controls="faq-collapse-<?= esc($index) ?>">
@@ -117,6 +122,7 @@
     </div>
 </section>
 
+<!-- Detalle del acompanamiento profesional -->
 <section class="py-5">
     <div class="container">
         <div class="row g-4 align-items-center">

@@ -3,6 +3,7 @@
 <?= $this->section('title') ?>Brixo | Encuentra profesionales de obra<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+<!-- Hero principal con buscador de servicios -->
 <section class="hero-section py-5 py-lg-6 bg-light position-relative">
     <div class="container">
         <div class="row align-items-center g-4">
@@ -50,6 +51,7 @@
     </div>
 </section>
 
+<!-- Listado de servicios destacados -->
 <section class="py-5 py-lg-6">
     <div class="container">
         <div class="d-flex flex-column flex-lg-row align-items-lg-end justify-content-between mb-4">
@@ -61,6 +63,7 @@
         </div>
         <div class="row g-4">
             <?php foreach ($serviceCategories as $category): ?>
+                <!-- Tarjeta de servicio generada dinamicamente -->
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card h-100 p-4 border-0 shadow-sm rounded-4">
                         <div class="icon-wrap bg-primary-subtle text-primary mb-3">
@@ -75,6 +78,7 @@
     </div>
 </section>
 
+<!-- Seccion para explicar el funcionamiento y resaltar botones clave -->
 <section class="py-5 py-lg-6 bg-primary text-white">
     <div class="container">
         <div class="row align-items-center g-4">
@@ -91,6 +95,7 @@
                     <h5 class="fw-semibold mb-3">Así funciona Brixo</h5>
                     <ul class="list-unstyled mb-0">
                         <?php foreach ($workflowSteps as $index => $step): ?>
+                            <!-- Paso del flujo guiado -->
                             <li class="d-flex gap-3 align-items-start mb-3">
                                 <div class="step-circle flex-shrink-0"><?= esc($index + 1) ?></div>
                                 <div>
@@ -106,6 +111,7 @@
     </div>
 </section>
 
+<!-- Profesionales destacados con estadisticas -->
 <section class="py-5 py-lg-6 bg-light">
     <div class="container">
         <div class="d-flex flex-column flex-lg-row align-items-lg-end justify-content-between mb-4">
@@ -117,6 +123,7 @@
         </div>
         <div class="row g-4">
             <?php foreach ($featuredProfessionals as $pro): ?>
+                <!-- Tarjeta de profesional destacado -->
                 <div class="col-md-6 col-xl-4">
                     <div class="professional-card p-4 bg-white rounded-4 shadow-sm h-100">
                         <div class="d-flex align-items-center justify-content-between mb-3">
@@ -135,6 +142,7 @@
     </div>
 </section>
 
+<!-- Testimonios de clientes -->
 <section class="py-5 py-lg-6">
     <div class="container">
         <div class="text-center mb-5">
@@ -143,6 +151,7 @@
         </div>
         <div class="row g-4">
             <?php foreach ($testimonials as $testimonial): ?>
+                <!-- Testimonio individual -->
                 <div class="col-md-6 col-lg-4">
                     <div class="testimonial-card h-100 p-4 rounded-4 border-0 shadow-sm">
                         <p class="fst-italic text-muted">“<?= esc($testimonial['quote']) ?>”</p>
@@ -154,6 +163,7 @@
     </div>
 </section>
 
+<!-- Llamado a la accion final -->
 <section class="py-5 py-lg-6 bg-dark text-white">
     <div class="container">
         <div class="row align-items-center g-4">

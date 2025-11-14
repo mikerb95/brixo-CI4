@@ -3,6 +3,7 @@
 <?= $this->section('title') ?>Brixo | Ofrece tus servicios como profesional<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+<!-- Presentacion para profesionales interesados en ofrecer servicios -->
 <section class="page-header py-5 bg-light border-bottom">
     <div class="container">
         <div class="row align-items-center g-4">
@@ -21,6 +22,7 @@
                     <h5 class="fw-semibold mb-3">Beneficios clave</h5>
                     <ul class="list-unstyled text-muted mb-0">
                         <?php foreach ($perks as $perk): ?>
+                            <!-- Beneficio individual resaltado -->
                             <li class="d-flex align-items-start gap-3 mb-3">
                                 <i class="bi bi-stars text-primary mt-1"></i>
                                 <span><?= esc($perk) ?></span>
@@ -33,6 +35,7 @@
     </div>
 </section>
 
+<!-- Requisitos y formulario de registro -->
 <section class="py-5" id="registro-pro">
     <div class="container">
         <div class="row g-4 align-items-start">
@@ -41,6 +44,7 @@
                 <p class="text-muted">Queremos garantizar experiencias confiables a nuestros clientes. Por eso validamos tu experiencia, certificaciones y cumplimiento de normas de seguridad antes de activar tu perfil.</p>
                 <ul class="list-unstyled text-muted">
                     <?php foreach ($requirements as $requirement): ?>
+                        <!-- Requisito clave antes de activar perfil -->
                         <li class="d-flex align-items-start gap-3 mb-3">
                             <i class="bi bi-check2-circle text-primary mt-1"></i>
                             <span><?= esc($requirement) ?></span>
@@ -90,6 +94,7 @@
     </div>
 </section>
 
+<!-- Beneficios adicionales luego de unirse -->
 <section class="py-5 bg-primary text-white">
     <div class="container">
         <div class="row g-4 align-items-center">

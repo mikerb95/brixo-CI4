@@ -1,5 +1,6 @@
 <?php
 /** @var CodeIgniter\View\View $this */
+// Plantilla principal compartida por todas las vistas publicas
 $title = $this->renderSection('title') ?: 'Brixo | Servicios Profesionales en Construcción';
 ?>
 <!doctype html>
@@ -19,6 +20,13 @@ $title = $this->renderSection('title') ?: 'Brixo | Servicios Profesionales en Co
     <?= $this->renderSection('styles') ?>
 </head>
 <body>
+<?php
+// Revisamos estado de sesion para personalizar menu superior
+$isLoggedIn = (bool) session('isLoggedIn');
+$authUser   = session('user');
+$userName   = is_array($authUser) ? ($authUser['name'] ?? 'Usuario') : 'Usuario';
+?>
+<!-- Barra de navegacion con enlaces informativos y acciones de usuario -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
     <div class="container">
         <a class="navbar-brand fw-bold text-primary" href="<?= esc(route_to('home')) ?>">Brixo</a>
@@ -31,15 +39,38 @@ $title = $this->renderSection('title') ?: 'Brixo | Servicios Profesionales en Co
                 <li class="nav-item"><a class="nav-link" href="<?= esc(route_to('hire')) ?>">Contrata</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= esc(route_to('professionals')) ?>">Profesionales</a></li>
                 <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-3" href="<?= esc(route_to('payment-demo')) ?>">Pago Demo</a></li>
+                <?php if ($isLoggedIn): ?>
+                    <li class="nav-item ms-lg-3">
+                        <span class="nav-link text-muted">Hola, <?= esc($userName) ?></span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= esc(route_to('logout')) ?>">Cerrar sesión</a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= esc(route_to('login')) ?>">Iniciar sesión</a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>
 </nav>
 
+<?php if ($flashSuccess = session()->getFlashdata('global_success')): ?>
+    <!-- Mensaje de exito global reusable -->
+    <div class="container mt-3">
+        <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
+            <?= esc($flashSuccess) ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+<?php endif; ?>
+
 <main>
     <?= $this->renderSection('content') ?>
 </main>
 
+<!-- Pie de pagina con informacion corporativa y redes sociales -->
 <footer class="bg-dark text-white py-5">
     <div class="container">
         <div class="row g-4">

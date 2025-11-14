@@ -3,6 +3,7 @@
 <?= $this->section('title') ?>Brixo | Demo de pago protegido<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
+<!-- Presentacion del flujo demo de pagos -->
 <section class="py-5 bg-light border-bottom">
     <div class="container">
         <div class="row align-items-center g-4">
@@ -25,10 +26,12 @@
     </div>
 </section>
 
+<!-- Formulario de simulacion y panel de resultados -->
 <section class="py-5">
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-6">
+                <!-- Formulario con validacion basica -->
                 <div class="card border-0 shadow-sm p-4">
                     <h5 class="fw-semibold mb-3">Formulario de simulación</h5>
                     <form method="post" action="<?= esc(route_to('payment-demo')) ?>" novalidate>
@@ -36,7 +39,7 @@
                         <div class="mb-3">
                             <label for="client_name" class="form-label">Nombre del cliente</label>
                             <input type="text" class="form-control <?= isset($errors['client_name']) ? 'is-invalid' : '' ?>" id="client_name" name="client_name" value="<?= esc(old('client_name')) ?>" placeholder="Ej. Ana Rodríguez">
-                            <?php if (isset($errors['client_name'])): ?>
+                                <?php if (isset($errors['client_name'])): ?>
                                 <div class="invalid-feedback"><?= esc($errors['client_name']) ?></div>
                             <?php endif; ?>
                         </div>
@@ -94,6 +97,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
+                <!-- Tarjeta que muestra el resultado de la simulacion -->
                 <div class="card border-0 shadow-sm p-4 h-100">
                     <h5 class="fw-semibold mb-3">Resultado</h5>
                     <?php $success = session()->getFlashdata('payment_success'); ?>
@@ -123,6 +127,7 @@
                         <h6 class="fw-semibold">Próximos pasos</h6>
                         <ol class="text-muted mb-0">
                             <?php foreach ($paymentResult['nextSteps'] as $step): ?>
+                                <!-- Paso siguiente dentro del flujo demo -->
                                 <li class="mb-2"><?= esc($step) ?></li>
                             <?php endforeach; ?>
                         </ol>
